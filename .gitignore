@@ -3,6 +3,6 @@
 /cypress/screenshots
 /cypress/videos
 cypress.config.js
-package-lock.json
-package.json
+cypress.env.json
 .env
+HELPER.md
