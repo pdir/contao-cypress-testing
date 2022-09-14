@@ -1,0 +1,18 @@
+name: CI
+
+on:
+    push:
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Install the testing suite
+              run: npm ci
+            - name: Run the testing suite
+              run: CONTAO_BASE_URL=${{ secrets.CONTAO_BASE_URL }} ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }} ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }} npx cypress run

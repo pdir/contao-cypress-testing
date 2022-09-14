@@ -39,8 +39,8 @@ Cypress.Commands.add('login', () => {
     })
 
     cy.visit('/contao/login')
-    cy.get('input[id="username"]').type( Cypress.env('admin_username') )
-    cy.get('input[id="password"]').type( Cypress.env('admin_password') )
+    cy.get('input[id="username"]').type( Cypress.env('ADMIN_USERNAME') )
+    cy.get('input[id="password"]').type( Cypress.env('ADMIN_PASSWORD') )
     cy.get('button[id="login"]').click()
 })
 

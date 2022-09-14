@@ -5,9 +5,9 @@ import buttons from "../fixtures/flexible/_buttons.json";
 export class Backend {
   static login() {
     cy.visit(backend.routes.backend);
-    cy.get(selectors.loginUsernameInputSelector).type(Cypress.env('admin_username'));
-    cy.get(selectors.loginPasswordInputSelector).type(`${Cypress.env('admin_password')}{enter}`);
-    this.isLoggedIn(Cypress.env('admin_username'));
+    cy.get(selectors.loginUsernameInputSelector).type(Cypress.env('ADMIN_USERNAME'));
+    cy.get(selectors.loginPasswordInputSelector).type(`${Cypress.env('ADMIN_PASSWORD')}{enter}`);
+    this.isLoggedIn(Cypress.env('ADMIN_USERNAME'));
   }
 
   static isLoggedIn(user) {
