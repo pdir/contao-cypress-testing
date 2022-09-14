@@ -40,9 +40,6 @@ describe('Themes - back end module', () => {
   })
 
   it('Delete theme', () => {
-
-    cy.visit(Cypress.env('HOST') + '/contao')
-
     cy.get('#tl_navigation a')
       .contains('Themes')
       .click({force: true})
@@ -53,9 +50,6 @@ describe('Themes - back end module', () => {
   })
 
   it('New theme', () => {
-
-    cy.visit(Cypress.env('HOST') + '/contao')
-
     cy.get('#tl_navigation a')
       .contains('Themes')
       .click({force: true})

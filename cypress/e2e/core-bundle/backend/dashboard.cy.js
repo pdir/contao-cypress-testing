@@ -17,7 +17,6 @@ describe('Back end login', () => {
   })
 
   it('Check header navigation', () => {
-    cy.visit(Cypress.env('HOST') + '/contao')
     cy.get('ul[id="tmenu"] a.icon-manual').should('contain', 'Manual')
     cy.get('ul[id="tmenu"] a.icon-alert').should('contain', 'Alerts')
     cy.get('ul[id="tmenu"] a.icon-debug').should('contain', 'Debug mode')
@@ -34,7 +33,6 @@ describe('Back end login', () => {
   })
 
   it('Toggle groups', () => {
-    cy.visit(Cypress.env('HOST') + '/contao')
     cy.get('nav[id="tl_navigation"] li > a[title="Collapse node"]').each(($el) => {
       cy.wrap($el).click()
       console.log(cy.get('nav[id="tl_navigation"] a.group-content').parent());

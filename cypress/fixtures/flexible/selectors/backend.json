@@ -1,5 +1,9 @@
 {
     "loginUsernameInputSelector": "#username",
     "loginPasswordInputSelector": "#password",
-    "headerNavigationProfileButtonSelector": "#tmenu span.profile button"
+    "headerNavigationProfileButtonSelector": "#tmenu span.profile button",
+    "userProfilePurgeDataSessionDataSelector": "#opt_purge_0",
+    "userProfilePurgeDataImageCacheSelector": "#opt_purge_1",
+    "userProfilePurgeDataPreviewCacheSelector": "#opt_purge_2",
+    "userProfilePurgeDataSharedCacheSelector": "#opt_purge_3"
 }

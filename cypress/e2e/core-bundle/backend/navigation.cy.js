@@ -1,3 +1,4 @@
+import {Backend} from '../../../support/backend'
 import backend from "../../../fixtures/flexible/backend.json";
 
 describe('Navigation', () => {
@@ -6,7 +7,8 @@ describe('Navigation', () => {
   })
 
   it('Toggle groups', () => {
-    cy.get('nav#tl_navigation ul > li a.group-content').click().then((elem) => {
+    Backend.clearBackendUserSessionData();
+    cy.get('nav#tl_navigation ul > li a.group-content').click({force: true}).then((elem) => {
       cy.get(elem).parent().should('have.class', 'collapsed')
     })
   })

@@ -46,6 +46,11 @@ The package contains a bunch of pre-built commands for easier navigation in the 
 Backend.login(username, password)
 ```
 
+### Clear backend user session
+```js
+Backend.clearBackendUserSessionData()
+```
+
 #### Targeting elements inside iframes 
 ```js
 // find elements
@@ -70,9 +75,14 @@ cy.get('iframe').iframe(() => {
               <module>.func.cy      # functional tests (e.g. testing the function of select fields, DCA fields, 
                                     # buttons [create, delete, edit, toggle all, drag and drop, edit multiple etc.])
             /frontend 
+            /all.cy.js              # run all tests of the bundle
         ..
         /vendor/<bundle>       # e.g. contao-demo
-                               # use the same folder structure as for the core bundles      
+                               # use the same folder structure as for the core bundles  
+      
+      /all.core.cy.js         # run all core tests
+      /all.cy.js              # run all tests, also from the vendor folder
+      /all.vendor.cy.js       # run all vendor tests
       /fixtures
       /screenshots
       /support

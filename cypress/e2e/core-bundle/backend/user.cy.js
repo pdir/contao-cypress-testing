@@ -10,7 +10,7 @@ describe('Users - back end modules', () => {
       .contains('Users')
       .click({force: true})
 
-    cy.get('table.tl_listing tr').first().get('td').eq(2).contains(Cypress.env('ADMIN_USERNAME'))
+    cy.get('table.tl_listing tr').first().get('td.col_username').contains(Cypress.env('admin_username'))
   })
 
   it('Edit', () => {
