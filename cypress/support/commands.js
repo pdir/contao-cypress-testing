@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 require('cypress-downloadfile/lib/downloadFileCommand')
+import {Backend} from '../support/backend'
 
 Cypress.Commands.add('login', () => {
 
@@ -37,9 +38,9 @@ Cypress.Commands.add('login', () => {
         return false
     })
 
-    cy.visit(Cypress.env('HOST') + '/contao/login')
-    cy.get('input[id="username"]').type( Cypress.env('ADMIN_USERNAME') )
-    cy.get('input[id="password"]').type( Cypress.env('ADMIN_PASSWORD') )
+    cy.visit('/contao/login')
+    cy.get('input[id="username"]').type( Cypress.env('admin_username') )
+    cy.get('input[id="password"]').type( Cypress.env('admin_password') )
     cy.get('button[id="login"]').click()
 })
 

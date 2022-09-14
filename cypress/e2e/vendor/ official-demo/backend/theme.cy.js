@@ -1,21 +1,11 @@
+import backend from "../../../../fixtures/flexible/backend.json";
+
 describe('Themes - back end module', () => {
-
-  beforeEach(() => {
-    // cookies will not be cleared before the NEXT test starts.
-    Cypress.Cookies.preserveOnce('PHPSESSID', 'csrf_https-contao_csrf_token')
-  })
-
   before(() => {
-    cy.getCookie('PHPSESSID').then((cookie) => {
-      if (!cookie) {
-        cy.login()
-      }
-    })
+    cy.visit(backend.routes.backend);
   })
 
   it('Load themes', () => {
-    cy.visit(Cypress.env('HOST') + '/contao')
-
     cy.get('#tl_navigation a')
       .contains('Themes')
       .click({force: true})

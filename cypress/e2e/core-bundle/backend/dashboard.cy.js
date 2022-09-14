@@ -1,16 +1,8 @@
+import backend from "../../../fixtures/flexible/backend.json";
+
 describe('Back end login', () => {
-
-  beforeEach(() => {
-    // cookies will not be cleared before the NEXT test starts.
-    Cypress.Cookies.preserveOnce('PHPSESSID', 'csrf_https-contao_csrf_token')
-  })
-
   before(() => {
-    cy.getCookie('PHPSESSID').then((cookie) => {
-      if (!cookie) {
-        cy.login()
-      }
-    })
+    cy.visit(backend.routes.backend);
   })
 
   it('Cookies are set', () => {
@@ -20,7 +12,7 @@ describe('Back end login', () => {
   });
 
   it('Load Dashboard', () => {
-    cy.visit(Cypress.env('HOST') + '/contao')
+    cy.visit(backend.routes.backend)
     cy.get('#main_headline').should('contain', 'Dashboard')
   })
 

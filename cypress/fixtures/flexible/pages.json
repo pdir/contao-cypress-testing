@@ -1,0 +1,41 @@
+{
+    "backendUrl": "/contao?do=page",
+    "mainHeadline": "Pages",
+    "filterLabel": "Filter:",
+    "filterTypeDefaultText": "Page type",
+    "filterTypeDefaultValue": "tl_type",
+    "filterProtectedDefaultText": "Protect page",
+    "filterProtectedDefaultValue": "tl_protected",
+    "filterGroupsDefaultText": "Allowed member groups",
+    "filterGroupsDefaultValue": "tl_groups",
+    "filterNoSearchDefaultText": "Do not search",
+    "filterNoSearchDefaultValue": "tl_noSearch",
+    "filterPublishedDefaultText": "Publish page",
+    "filterPublishedDefaultValue": "tl_published",
+    "filterFeedFormatDefaultText": "Feed format",
+    "filterFeedFormatDefaultValue": "tl_feedFormat",
+    "searchLabel": "Search:",
+    "searchL80xxz3yDefaultText": "Access key",
+    "searchL80xxz3yDefaultValue": "accesskey",
+    "emptyMessage": "No records found.",
+    "routes": {
+        "mainNavigationPages": "/contao?do=page"
+    },
+    "dcaFields": {
+        "root": {
+            "title": "#ctrl_title",
+            "type": "#ctrl_type",
+            "alias": "#ctrl_alias",
+            "language": "#ctrl_language",
+            "fallback": "#opt_fallback_0",
+            "published": "#opt_published_0"
+        },
+        "regular": {
+            "title": "#ctrl_title",
+            "type": "#ctrl_type",
+            "alias": "#ctrl_alias",
+            "pageTitle": "#ctrl_pageTitle",
+            "published": "#opt_published_0"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "buttonsHeaderNewSelector": "#tl_buttons a.header_new",
+    "buttonsHeaderToggleSelector": "#tl_buttons a.header_toggle",
+    "buttonsHeaderEditAllSelector": "#tl_buttons a.header_edit_all",
+    "buttonsHeaderBackSelector": "#tl_buttons a.header_back",
+    "buttonMainPasteAtTheTop": "a[title=\"Paste at the top\"]",
+    "buttonMainPasteIntoPageId1": "a[title=\"Paste into page ID 1\"",
+    "buttonMainSave": "#save",
+    "buttonMainSaveAndClose": "#saveNclose",
+    "buttonMainSaveAndCreate": "#saveNcreate",
+    "buttonMainSaveAndDuplicate": "#saveNduplicate"
+}

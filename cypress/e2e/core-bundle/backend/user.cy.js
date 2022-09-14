@@ -1,20 +1,11 @@
+import backend from "../../../fixtures/flexible/backend.json";
+
 describe('Users - back end modules', () => {
-
-  beforeEach(() => {
-    // cookies will not be cleared before the NEXT test starts.
-    Cypress.Cookies.preserveOnce('PHPSESSID', 'csrf_https-contao_csrf_token')
-  })
-
   before(() => {
-    cy.getCookie('PHPSESSID').then((cookie) => {
-      if (!cookie) {
-        cy.login()
-      }
-    })
+    cy.visit(backend.routes.backend);
   })
 
   it('Load users', () => {
-    cy.visit(Cypress.env('HOST') + '/contao')
     cy.get('#tl_navigation a')
       .contains('Users')
       .click({force: true})
@@ -23,7 +14,6 @@ describe('Users - back end modules', () => {
   })
 
   it('Edit', () => {
-    // cy.visit(Cypress.env('HOST') + '/contao?do=user&act=edit&id='+Cypress.env('ADMIN_ID'))
     cy.get('table.tl_listing tr').first().get('td').eq(4).children('a').eq(0).click()
   })
 

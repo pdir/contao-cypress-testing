@@ -1,0 +1,12 @@
+{
+    "routes": {
+        "backend": "/contao",
+        "headerNavigationManual": "https://to.contao.org/manual",
+        "headerNavigationAlert": "/contao/alerts",
+        "headerNavigationDebugMode": "/contao?do=debug&key=enable",
+        "headerNavigationPreview": "/contao/preview",
+        "headerNavigationProfile": "/contao?do=login",
+        "headerNavigationSecurity": "/contao?do=security",
+        "headerNavigationLogout": "/contao/logout"
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "loginUsernameInputSelector": "#username",
+    "loginPasswordInputSelector": "#password",
+    "headerNavigationProfileButtonSelector": "#tmenu span.profile button"
+}

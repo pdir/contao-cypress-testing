@@ -1,0 +1,16 @@
+{
+    "mainHeadlineSelector": "#main_headline",
+    "emptyMessageSelector": "#main p.tl_empty",
+    "filterLabelSelector": ".tl_filter strong",
+    "filterTypeSelector": "#type",
+    "filterProtectedSelector": "#protected",
+    "filterGroupsSelector": "#groups",
+    "filterNoSearchSelector": "#noSearch",
+    "filterPublishedSelector": "#published",
+    "filterFeedFormatSelector": "#feedFormat",
+    "searchLabelSelector": ".tl_search strong",
+    "searchL80xxz3ySelector": "select[name=tl_field]",
+    "searchInputSelector": ".tl_search input[type=\"search\"]",
+    "filterApplyButtonSelector": "#filter",
+    "filterResetButtonSelector": "#filter_reset"
+}

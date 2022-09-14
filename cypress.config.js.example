@@ -1,18 +1,20 @@
 const { defineConfig } = require("cypress")
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
+const fs = require("fs");
+const envConfig = fs.existsSync('./cypress.env.json') ? require('./cypress.env.json') : {};
+
+// Run "NODE_ENV=develop; npx cypress run" to run tests locally
+const defaultBaseUrl = process.env.NODE_ENV === 'develop' ? 'http://contao5.localhost' : 'https://contao5.hostiteasy.de/';
+
+const baseUrl = process.env.CONTAO_BASE_URL || envConfig.CONTAO_BASE_URL || defaultBaseUrl;
 
 module.exports = defineConfig({
   e2e: {
-    projectId: 'contao',
-    env: {
-      HOST: 'https://yourdomain.com',
-      ADMIN_ID: 1,
-      ADMIN_USERNAME: 'admin',
-      ADMIN_PASSWORD: 'password',
-    },
+    projectId: 'contao5,
+    baseUrl: baseUrl,
     videoCompression: 15,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on('task', {downloadFile})
     },
   },
 })

@@ -15,6 +15,25 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import {Backend} from "./backend";
+import backend from "../fixtures/flexible/backend.json";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+//
+// global beforeEach and before
+//
+beforeEach(() => {
+  // cookies will not be cleared before the NEXT test starts.
+  Cypress.Cookies.preserveOnce('PHPSESSID', 'csrf_https-contao_csrf_token')
+})
+
+before(() => {
+  cy.getCookie('PHPSESSID').then((cookie) => {
+    if (!cookie) {
+      Backend.login()
+    }
+  })
+  cy.visit(backend.routes.backend);
+})
