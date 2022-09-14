@@ -16,7 +16,7 @@ Very early version!
     git clone https://github.com/pdir/contao-cypress-testing.git 
     cd contao-cypress-testing
     cp cypress.config.js.example cypress.config.js
-    cp cypress.env.json.example cp cypress.env.json
+    cp cypress.env.json.example cypress.env.json
     # set parameters for your Contao 5 test domain in cypress.config.js
     # set parameters for admin user in cypress.env.json
     # use npm to install cypress
@@ -34,6 +34,15 @@ For more information about cypress, visit https://docs.cypress.io/guides/overvie
     cypress open
     # or
     yarn run cypress open
+
+## Run a specific group or single file
+
+    cypress run -s cypress/e2e/all.core.cy.js
+
+## Run tests with screenshots and video to share with project members [Projects Setup](https://docs.cypress.io/guides/dashboard/projects.html#Setup)
+
+    cypress run --record --spec "cypress/e2e/core-bundle/backend/pages/pages.design.cy.js"      # a single test
+    cypress run --record --spec "cypress/e2e/core-bundle/all.cy.js"                             # all core bundle tests
 
 ## Commands
 

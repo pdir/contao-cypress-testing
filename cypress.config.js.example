@@ -10,7 +10,7 @@ const baseUrl = process.env.CONTAO_BASE_URL || envConfig.CONTAO_BASE_URL || defa
 
 module.exports = defineConfig({
   e2e: {
-    projectId: 'contao5,
+    projectId: 'contao5',
     baseUrl: baseUrl,
     videoCompression: 15,
     setupNodeEvents(on, config) {
