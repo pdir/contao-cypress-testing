@@ -14,7 +14,7 @@ indent_size = 4
 [*.js]
 indent_size = 2
 
-[*.{txt,html,atom,xml,xlf,tmpl,ts,json}]
+[*.{txt,html,atom,xml,xlf,tmpl,ts,json,js}]
 insert_final_newline = false
 
 [*.{md,markdown}]
