@@ -1,6 +1,6 @@
 # contao-cypress-testing
 
-A community-driven [Cypress](https://www.cypress.io/) testing suite for Contao 5
+A community-driven [Cypress](https://www.cypress.io/) testing suite for Contao 5.  
 You can use an existing local Contao installation or a remote one.
 
 Very early version!
