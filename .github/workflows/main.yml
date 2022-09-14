@@ -17,4 +17,4 @@ jobs:
             - name: copy config and env file
               run: cp cypress.config.js.example cypress.config.js && cp cypress.env.json.example cypress.env.json
             - name: Run the testing suite
-              run: CONTAO_BASE_URL=${{ secrets.CONTAO_BASE_URL }} ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }} ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }} npx cypress run
+              run: CONTAO_BASE_URL=${{ secrets.CONTAO_BASE_URL }} ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }} ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }} npx cypress run -spec cypress/e2e/all.core.cy.js --headless --browser chrome
