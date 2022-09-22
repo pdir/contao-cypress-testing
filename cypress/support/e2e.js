@@ -15,8 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import {Backend} from './backend';
-import backend from "../fixtures/flexible/backend.json";
+// import {Backend} from './backend';
+// import backend from "../fixtures/flexible/backend.json";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -30,10 +30,10 @@ beforeEach(() => {
 })
 
 before(() => {
-  cy.getCookie('PHPSESSID').then((cookie) => {
-    if (!cookie) {
-      Backend.login()
-    }
-  })
-  cy.visit(backend.routes.backend);
+  // cy.getCookie('PHPSESSID').then((cookie) => {
+  //  if (!cookie) {
+  //    Backend.login()
+  //  }
+  //})
+  //cy.visit(backend.routes.backend);
 })

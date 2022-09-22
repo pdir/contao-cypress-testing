@@ -25,24 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 require('cypress-downloadfile/lib/downloadFileCommand')
-import {Backend} from '../support/backend'
-
-Cypress.Commands.add('login', () => {
-
-    const caught = {
-        message: null,
-    }
-
-    cy.on('uncaught:exception', (e, runnable, promise) => {
-        caught.message = e.message
-        return false
-    })
-
-    cy.visit('/contao/login')
-    cy.get('input[id="username"]').type( Cypress.env('ADMIN_USERNAME') )
-    cy.get('input[id="password"]').type( Cypress.env('ADMIN_PASSWORD') )
-    cy.get('button[id="login"]').click()
-})
 
 Cypress.Commands.add('iframe', { prevSubject: 'element' }, $iframe => {
   return new Cypress.Promise(resolve => {

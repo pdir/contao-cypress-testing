@@ -12,7 +12,7 @@ Very early version!
 
 ## Installing
 
-    # clone the project
+    # clone the project in your existing bundle or contao mono repo
     git clone https://github.com/pdir/contao-cypress-testing.git 
     cd contao-cypress-testing
     cp cypress.config.js.example cypress.config.js
@@ -28,6 +28,15 @@ Very early version!
     Run "NODE_ENV=develop; cypress run" to run tests locally
 
 For more information about cypress, visit https://docs.cypress.io/guides/overview/why-cypress
+
+## Create language files for your bundle or Contao core bundles
+    
+    # Generate files for php files / example de ->default.php
+    php -f tools/lang-to-json.php src\Resources\contao\languages\de\default.php cypress\fixtures\i18n\example-bundle\de\default.json
+
+    # Generate files for xml files / example core-bundle -> de -> default.php
+    php -f tools/xlf-to-json.php core-bundle\contao\languages\de\default.xlf cypress\fixtures\i18n\core-bundle\de\default.json
+    php -f tools/xlf-to-json.php core-bundle\contao\languages\en\default.xlf cypress\fixtures\i18n\core-bundle\en\default.json
 
 ## Opening the test app
 

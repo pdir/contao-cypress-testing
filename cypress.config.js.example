@@ -7,6 +7,7 @@ const envConfig = fs.existsSync('./cypress.env.json') ? require('./cypress.env.j
 const defaultBaseUrl = process.env.NODE_ENV === 'develop' ? 'http://contao5.localhost' : 'https://contao5.hostiteasy.de/';
 
 const baseUrl = process.env.CONTAO_BASE_URL || envConfig.CONTAO_BASE_URL || defaultBaseUrl;
+const language = process.env.LANGUAGE || envConfig.LANGUAGE || 'en';
 
 module.exports = defineConfig({
   e2e: {
@@ -14,7 +15,17 @@ module.exports = defineConfig({
     baseUrl: baseUrl,
     videoCompression: 15,
     setupNodeEvents(on, config) {
-      on('task', {downloadFile})
+      // add downloadFile
+      on('task', {
+        downloadFile,
+        setLang: (val) => {
+          return (lang = val);
+        },
+
+        getLang: () => {
+          return lang;
+        }
+      })
     },
   },
 })

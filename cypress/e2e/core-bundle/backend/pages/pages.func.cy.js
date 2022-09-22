@@ -9,6 +9,8 @@ import index from "../../../../fixtures/flexible/pages-regular-page-index.json"
 describe('Pages functional tests', () => {
   before(() => {
     cy.visit(backend.routes.backend);
+
+    Backend.clearBackendUserSessionData()
   })
 
   it('Create website root', () => {
@@ -72,11 +74,18 @@ describe('Pages functional tests', () => {
   })
 
   it('Delete regular page', () => {
+    cy.get('main #tl_buttons a.header_toggle').click();
+    cy.get('main ul.tl_listing li').eq(2).find('a[class="delete"]').click()
 
+    // find by title
+    // cy.get('#main').find('td.tl_file_list').contains(index.title).next().find('a.delete').click()
   })
 
   it('Delete root page', () => {
+    cy.get('main ul.tl_listing li').eq(1).find('a[class="delete"]').click()
 
+    // find by title
+    // cy.get('#main').find('td.tl_file_list').contains(root.title).next().find('a.delete').click()
   })
 
 })

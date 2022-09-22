@@ -3,15 +3,23 @@ import backend from '../fixtures/flexible/backend';
 import buttons from '../fixtures/flexible/_buttons.json';
 
 export class Backend {
+  static setLanguage() {
+    cy.get('html').then(($html) => {
+      this.lang = $html.attr('lang')
+      cy.task('setLang', this.lang)
+    })
+  }
+
   static login() {
     cy.visit(backend.routes.backend);
     cy.get(selectors.loginUsernameInputSelector).type(Cypress.env('ADMIN_USERNAME'));
     cy.get(selectors.loginPasswordInputSelector).type(`${Cypress.env('ADMIN_PASSWORD')}{enter}`);
+    this.setLanguage();
     this.isLoggedIn(Cypress.env('ADMIN_USERNAME'));
   }
 
   static isLoggedIn(user) {
-    cy.get(selectors.headerNavigationProfileButtonSelector).contains('User ' + user)
+    // cy.get(selectors.headerNavigationProfileButtonSelector).contains('User ' + user)
   }
 
   static clearBackendUserSessionData() {

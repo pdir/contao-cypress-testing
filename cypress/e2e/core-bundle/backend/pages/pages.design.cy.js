@@ -4,8 +4,28 @@ import pages from "../../../../fixtures/flexible/pages"
 import selectors from "../../../../fixtures/flexible/selectors/pages"
 import backend from "../../../../fixtures/flexible/backend.json"
 
+let i18n = {}
+
 describe('Pages design tests', () => {
   before(() => {
+    cy.task('getLang').then((lang) => {
+      cy.fixture(`i18n/core-bundle/${lang}/default.json`).then((lang) => {
+        i18n.default = lang
+      })
+    })
+
+    cy.task('getLang').then((lang) => {
+      cy.fixture(`i18n/core-bundle/${lang}/modules.json`).then((lang) => {
+        i18n.modules = lang
+      })
+    })
+
+    cy.task('getLang').then((lang) => {
+      cy.fixture(`i18n/core-bundle/${lang}/tl_page.json`).then((lang) => {
+        i18n.tl_page = lang
+      })
+    })
+
     cy.visit(backend.routes.backend);
   })
 
@@ -13,14 +33,14 @@ describe('Pages design tests', () => {
     cy.visit(pages.routes.mainNavigationPages);
 
     cy.get(selectors.mainHeadlineSelector)
-      .should('contain.text', pages.mainHeadline)
+      .should('contain.text', i18n.modules['MOD.page.0'])
     cy.get(selectors.emptyMessageSelector)
-      .should('contain.text', pages.emptyMessage)
+      .should('contain.text', i18n.default['MSC.noResult'])
   })
 
   it('Check filter panel and selects', () => {
     cy.get(selectors.filterLabelSelector)
-      .should('contain.text', pages.filterLabel)
+      .should('contain.text', i18n.default['MSC.filter'])
 
     cy.get(selectors.filterTypeSelector)
       .contains(pages.filterTypeDefaultText)
@@ -49,7 +69,7 @@ describe('Pages design tests', () => {
 
   it('Check search panel, selects and buttons', () => {
     cy.get(selectors.searchLabelSelector)
-      .should('contain.text', pages.searchLabel)
+      .should('contain.text', i18n.default['MSC.searchLabel'])
 
     cy.get(selectors.searchL80xxz3ySelector)
       .contains(pages.searchL80xxz3yDefaultText)
