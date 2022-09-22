@@ -1,6 +1,6 @@
 import selectors from '../fixtures/flexible/selectors/backend';
 import backend from '../fixtures/flexible/backend';
-import buttons from "../fixtures/flexible/_buttons.json";
+import buttons from '../fixtures/flexible/_buttons.json';
 
 export class Backend {
   static login() {

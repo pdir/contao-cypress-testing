@@ -38,11 +38,12 @@ For more information about cypress, visit https://docs.cypress.io/guides/overvie
 ## Run a specific group or single file
 
     cypress run -s cypress/e2e/all.core.cy.js
+    cypress run -spec cypress/e2e/core-bundle/all.cy.js,cypress/e2e/news-bundle/all.cy.js
 
 ## Run tests with screenshots and video to share with project members [Projects Setup](https://docs.cypress.io/guides/dashboard/projects.html#Setup)
 
-    cypress run --record --spec "cypress/e2e/core-bundle/backend/pages/pages.design.cy.js"      # a single test
-    cypress run --record --spec "cypress/e2e/core-bundle/all.cy.js"                             # all core bundle tests
+    cypress run --record -s "cypress/e2e/core-bundle/backend/pages/pages.design.cy.js"      # a single test
+    cypress run --record -s "cypress/e2e/core-bundle/all.cy.js"                             # all core bundle tests
 
 ## Commands
 
@@ -93,6 +94,7 @@ cy.get('iframe').iframe(() => {
       /all.cy.js              # run all tests, also from the vendor folder
       /all.vendor.cy.js       # run all vendor tests
       /fixtures
+        /i18n       # folder for json language files *DO NOT COMMIT (Generate via tools for every feature/version)
       /screenshots
       /support
       /videos

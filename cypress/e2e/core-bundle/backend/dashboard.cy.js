@@ -1,4 +1,4 @@
-import backend from "../../../fixtures/flexible/backend.json";
+import backend from '../../../fixtures/flexible/backend.json'
 
 describe('Back end login', () => {
   before(() => {

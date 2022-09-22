@@ -2,7 +2,7 @@ import {Backend} from '../../../../support/backend'
 import buttons from "../../../../fixtures/flexible/_buttons"
 import pages from "../../../../fixtures/flexible/pages"
 import selectors from "../../../../fixtures/flexible/selectors/pages"
-import backend from "../../../../fixtures/flexible/backend.json";
+import backend from "../../../../fixtures/flexible/backend.json"
 
 describe('Pages design tests', () => {
   before(() => {

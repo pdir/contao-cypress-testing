@@ -1,5 +1,5 @@
 import {Backend} from '../../../support/backend'
-import backend from "../../../fixtures/flexible/backend.json";
+import backend from '../../../fixtures/flexible/backend.json'
 
 describe('Navigation', () => {
   before(() => {

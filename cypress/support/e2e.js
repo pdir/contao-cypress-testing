@@ -15,7 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import {Backend} from "./backend";
+import {Backend} from './backend';
 import backend from "../fixtures/flexible/backend.json";
 
 // Alternatively you can use CommonJS syntax:
