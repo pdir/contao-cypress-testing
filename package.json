@@ -3,7 +3,7 @@
     "cypress:open": "cypress open"
   },
   "devDependencies": {
-    "cypress": "^10.8.0",
+    "cypress": "^12.3.0",
     "cypress-downloadfile": "^1.2.3"
   }
 }
